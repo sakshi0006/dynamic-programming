@@ -1,0 +1,28 @@
+import java.util.*;
+import java.lang.*;
+import java.io.*;
+
+class Codechef
+{
+    int max=Integer.MIN_VALUE;
+    int maxSubarraySum(int num[])
+    {
+        int cache[]=new int[num.length];cache[0]=max=num[0];
+        for(int i=1;i<num.length;i++)
+        {
+            cache[i]=Math.max(cache[i-1]+num[i],num[i]);if(max<cache[i])max=cache[i];
+        }
+        return max;
+    }}
+    class Main{
+	public static void main (String[] args) throws java.lang.Exception
+	{
+	    Scanner sc=new Scanner(System.in);
+	   Codechef cc=new Codechef();
+	   System.out.println("Enter size");
+	   int n=sc.nextInt();int num[]=new int[n];
+	   for(int i=0;i<n;i++)num[i]=sc.nextInt();
+	   System.out.println("Maximum subarray sum="+cc.maxSubarraySum(num));
+	}
+  }
+
